@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pousada Alto da Boa Vista | Campos do Jordão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Preload Critical Images for LCP Optimization -->
+    <link rel="preload" as="image" href="https://pousadaaltodaboavista.com.br/wp-content/uploads/2025/07/img_1185-scaled.webp">
+    <link rel="preload" as="image" href="https://i.imgur.com/LGf0u8v.png">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pousada: {
+                green: '#102F25', // Deep Forest Green (Identity)
+                lightGreen: '#1A4234',
+                gold: '#C5A67C', // Gold/Beige (Luxury)
+                sand: '#F4F1EA', // Background
+                white: '#FFFFFF',
+              }
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'wood-pattern': "url('https://www.transparenttextures.com/patterns/wood-pattern.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #102F25;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #C5A67C;
+        border-radius: 4px;
+      }
+      
+      /* Swiper Customization for Focused Effect - SCOPED */
+      .focused-swiper .swiper-slide {
+        transition: transform 0.5s ease;
+        transform: scale(0.9); /* Inactive slides are smaller */
+        height: auto;
+      }
+      
+      .focused-swiper .swiper-slide-active {
+        transform: scale(1); /* Active slide is full size */
+        z-index: 20;
+      }
+
+      /* Control the dark overlay on inactive slides */
+      .focused-swiper .swiper-slide .slide-overlay {
+        opacity: 0.6; /* Default: Darkened */
+        transition: opacity 0.5s ease;
+      }
+      
+      .focused-swiper .swiper-slide-active .slide-overlay {
+        opacity: 0; /* Active: Clear */
+        pointer-events: none;
+      }
+
+      .swiper-pagination-bullet {
+        background: #C5A67C !important;
+        width: 10px;
+        height: 10px;
+        opacity: 0.6;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        width: 24px;
+        border-radius: 5px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "swiper/": "https://esm.sh/swiper@^12.0.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-pousada-sand text-gray-800 antialiased overflow-x-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
